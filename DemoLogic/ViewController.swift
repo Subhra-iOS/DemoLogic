@@ -72,22 +72,42 @@ extension ViewController{
     }
     
     func createDiamondPatternWith(lineNo : Int) -> Void{
-        var spaceString : String = String()
-        for i in 1 ..< lineNo{
-            let spaceCount = (lineNo - i)/2
-            spaceString = spaceString + String(repeating: " ", count: spaceCount)
-            let count = (i - 1) * 2 + 1
-            spaceString = spaceString + String(repeating: "*", count: count)
-            spaceString = spaceString + "\n"
+        var spaceCount = lineNo/2 + 1
+        var count = 0
+        
+        for i in (1 ..< (lineNo + 1)){
+            
+            if (i <= (lineNo/2 + 1)) {
+                count = i * 2 - 1
+                spaceCount = spaceCount - 1
+            }else{
+                count = (lineNo - i) * 2 + 1
+                spaceCount = spaceCount + 1
+            }
+            
         }
-        for i in (1 ... lineNo - 1).reversed(){
-            let spaceCount = i / 2
-            spaceString = spaceString + String(repeating: " ", count: spaceCount)
-           let count = (i + 1)
-           spaceString = spaceString + String(repeating: "*", count: count)
-            spaceString = spaceString + "\n"
-       }
-        print("\(spaceString)")
+       
+        let spaceString =  String(repeating: " ", count: spaceCount)
+        let starString =  String(repeating: "*", count: count)
+        print("\(spaceString + starString)")
+        
+       /* var height = lineNo
+        var spaceCount = height / 2 + 1
+
+        for row in (1 ..< height + 1) {
+          var starCount = 0
+          
+          if (row <= (height / 2  + 1) ) {
+            starCount  = row * 2 - 1
+            spaceCount -= 1
+          } else {
+            starCount  = (height - row) * 2 + 1
+            spaceCount += 1
+          }
+          let spaceInFront = String(repeating: " ", count: spaceCount);
+          let stars = String(repeating: "*", count: starCount);
+          print(spaceInFront + stars)
+        }*/
     }
     
 }
