@@ -13,8 +13,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        createTriangleWith(lineNo: 10)
     }
-
 
 }
 
+extension ViewController{
+    func createTriangleWith(lineNo : Int) -> Void{
+        var spaceStar : String = String()
+        for i in 0 ... lineNo{
+            for _ in (0 ..< lineNo - i ).reversed() {
+                spaceStar = spaceStar + " "
+            }
+            for _ in 0 ... i {
+                spaceStar = spaceStar + "*"
+            }
+            spaceStar = spaceStar + "\n"
+        }
+        
+        print("\(spaceStar)")
+
+        
+    }
+    
+}
