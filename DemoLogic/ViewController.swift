@@ -25,11 +25,11 @@ class ViewController: UIViewController {
 extension ViewController{
     func createTriangleWith(lineNo : Int) -> Void{
         var spaceStar : String = String()
-        for i in 0 ... lineNo{
-            for _ in (0 ..< lineNo - i ).reversed() {
+        for i in 0 ..< (lineNo + 1){
+            for _ in (0 ..< (lineNo - i )).reversed() {
                 spaceStar = spaceStar + " "
             }
-            for _ in 0 ... i {
+            for _ in 0 ..< i {
                 spaceStar = spaceStar + "*"
             }
             spaceStar = spaceStar + "\n"
