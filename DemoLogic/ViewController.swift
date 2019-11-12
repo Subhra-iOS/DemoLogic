@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        createTriangleWith(lineNo: 10)
-//        createRightfaceTriangleWith(lineNo: 10)
-//        createRightfaceUpDownTriangleWith(lineNo: 10)
-        createDiamondPatternWith(lineNo: 5)
+        createTriangleWith(lineNo: 10)
+        createRightfaceTriangleWith(lineNo: 10)
+        createRightfaceUpDownTriangleWith(lineNo: 10)
+        createDiamondPatternWith(lineNo: 10)
+        createPerfectTrianglePatternWith(lineNo: 10)
     }
 
 }
@@ -72,42 +73,42 @@ extension ViewController{
     }
     
     func createDiamondPatternWith(lineNo : Int) -> Void{
-        var spaceCount = lineNo/2 + 1
+        let height = lineNo
+        var spaceCount = height/2 + 1
         var count = 0
         
-        for i in (1 ..< (lineNo + 1)){
+        for i in (1 ..< (height + 1)){
             
-            if (i <= (lineNo/2 + 1)) {
+            if (i < (height/2 + 1)) {
                 count = i * 2 - 1
                 spaceCount = spaceCount - 1
             }else{
-                count = (lineNo - i) * 2 + 1
+                count = (height - i) * 2 + 1
                 spaceCount = spaceCount + 1
             }
             
+            let spaceString =  String(repeating: " ", count: spaceCount)
+           let starString =  String(repeating: "*", count: count)
+           print("\(spaceString + starString)")
+    
         }
-       
-        let spaceString =  String(repeating: " ", count: spaceCount)
-        let starString =  String(repeating: "*", count: count)
-        print("\(spaceString + starString)")
-        
-       /* var height = lineNo
-        var spaceCount = height / 2 + 1
-
-        for row in (1 ..< height + 1) {
-          var starCount = 0
-          
-          if (row <= (height / 2  + 1) ) {
-            starCount  = row * 2 - 1
-            spaceCount -= 1
-          } else {
-            starCount  = (height - row) * 2 + 1
-            spaceCount += 1
-          }
-          let spaceInFront = String(repeating: " ", count: spaceCount);
-          let stars = String(repeating: "*", count: starCount);
-          print(spaceInFront + stars)
-        }*/
+     
     }
+    
+    func createPerfectTrianglePatternWith(lineNo : Int) -> Void{
+          let height = lineNo
+          var spaceCount = height/2 + 1
+          let loopCount = height/2 + 1
+          var count = 0
+          
+          for i in (1 ..< loopCount){
+                count = i * 2 - 1
+                spaceCount = spaceCount - 1
+                let spaceString =  String(repeating: " ", count: spaceCount)
+               let starString =  String(repeating: "*", count: count)
+               print("\(spaceString + starString)")
+          }
+       
+      }
     
 }
