@@ -105,17 +105,17 @@ private func createNewCategory(){
        print("\(b2cProduct2.details)")
        print("\(String(describing: b2cProduct2.details[B2CProductResultKey.productItem.rawValue]))")
     
-    let b2cProduct3 : B2CProducts = B2CProducts.productCategoryInfo(B2CProductCategory.newArrivals.stringValue, B2CCategoryItemType.newArrivalsItem.rawValue, B2CCategoryDiscount.categoryDiscount(false).discountAvailable())
+    let b2cProduct3 : B2CProducts = B2CProducts.productCategoryInfo(B2CProductCategory.newArrivals.stringValue, B2CCategoryItemType.newArrivalsItem.rawValue, B2CCategoryDiscount.none.discountAvailable())
        
        print("\(b2cProduct3.details)")
        print("\(String(describing: b2cProduct3.details[B2CProductResultKey.productItem.rawValue]))")
     
-    let b2cProduct4 : B2CProducts = B2CProducts.productCategoryInfo(B2CProductCategory.recomandedProducts.stringValue, B2CCategoryItemType.recomendedItem.rawValue, B2CCategoryDiscount.categoryDiscount(false).discountAvailable())
+    let b2cProduct4 : B2CProducts = B2CProducts.productCategoryInfo(B2CProductCategory.recomandedProducts.stringValue, B2CCategoryItemType.recomendedItem.rawValue, B2CCategoryDiscount.none.discountAvailable())
        
        print("\(b2cProduct4.details)")
        print("\(String(describing: b2cProduct4.details[B2CProductResultKey.productItem.rawValue]))")
     
-    let b2cProduct5 : B2CProducts = B2CProducts.productCategoryInfo(B2CProductCategory.recomandedProducts.stringValue, B2CCategoryItemType.none.rawValue, B2CCategoryDiscount.categoryDiscount(false).discountAvailable())
+    let b2cProduct5 : B2CProducts = B2CProducts.productCategoryInfo(B2CProductCategory.recomandedProducts.stringValue, B2CCategoryItemType.none.rawValue, B2CCategoryDiscount.none.discountAvailable())
     
     print("\(b2cProduct5.details)")
     print("\(String(describing: b2cProduct5.details[B2CProductResultKey.productItem.rawValue]))")
