@@ -134,6 +134,11 @@ class ViewController: UIViewController {
 //        createPerfectTrianglePatternWith(lineNo: 10)
         
         createNewCategory()
+    
+    }
+    
+    override  func viewWillAppear(_ animated: Bool) {
+          
     }
 
 }
